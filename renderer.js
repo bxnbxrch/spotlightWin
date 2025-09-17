@@ -148,19 +148,30 @@ class SpotlightRenderer {
     }
 
     this.filteredItems = results
-      .sort((a, b) => {
-        // Start Menu 'Programs' apps to top
-        if (a.category === 'Applications' && b.category === 'Applications') {
-          if (a.isStartMenu && !b.isStartMenu) return -1;
-          if (!a.isStartMenu && b.isStartMenu) return 1;
-        }
-        // Move items without a valid icon to the bottom
-        const aHasIcon = a.icon && (a.icon.startsWith('data:image') || (typeof a.icon === 'string' && a.icon.length <= 3));
-        const bHasIcon = b.icon && (b.icon.startsWith('data:image') || (typeof b.icon === 'string' && b.icon.length <= 3));
-        if (aHasIcon && !bHasIcon) return -1;
-        if (!aHasIcon && bHasIcon) return 1;
-        return b.score - a.score;
-      })
+        .sort((a, b) => {
+          // Custom category order: Applications, Folders, Files, Web Search, Other
+          const categoryOrder = {
+            'Applications': 1,
+            'Folders': 2,
+            'Files': 3,
+            'Web Search': 4
+          };
+          // Group by category order
+          const aCat = categoryOrder[a.category] || 99;
+          const bCat = categoryOrder[b.category] || 99;
+          if (aCat !== bCat) return aCat - bCat;
+          // Start Menu 'Programs' apps to top within Applications
+          if (a.category === 'Applications' && b.category === 'Applications') {
+            if (a.isStartMenu && !b.isStartMenu) return -1;
+            if (!a.isStartMenu && b.isStartMenu) return 1;
+          }
+          // Move items without a valid icon to the bottom
+          const aHasIcon = a.icon && (a.icon.startsWith('data:image') || (typeof a.icon === 'string' && a.icon.length <= 3));
+          const bHasIcon = b.icon && (b.icon.startsWith('data:image') || (typeof b.icon === 'string' && b.icon.length <= 3));
+          if (aHasIcon && !bHasIcon) return -1;
+          if (!aHasIcon && bHasIcon) return 1;
+          return b.score - a.score;
+        })
       .slice(0, 15);
 
     this.selectedIndex = 0;
