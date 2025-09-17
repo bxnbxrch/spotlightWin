@@ -18,6 +18,8 @@ It’s built with **Electron**, **Node.js**, and **Fuse.js** for the fuzzy searc
 
 ---
 
+<img src="screenshots/image1.png">
+
 ## How to run it
 
 1. **Clone it**
