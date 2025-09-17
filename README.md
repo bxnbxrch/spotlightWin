@@ -1,6 +1,6 @@
-# WinSpotlight 🖥️⚡
+# Windows Spotlight Search 🖥️⚡
 
-**WinSpotlight** is basically Spotlight from macOS but for Windows. Search apps, files, folders, and even web stuff, and launch anything fast without touching the mouse.
+**Windows Spotlight Search** is basically Spotlight from macOS but for Windows. Search apps, files, folders, and even web stuff, and launch anything fast without touching the mouse.
 Just press ctrl+space to open.
 
 It’s built with **Electron**, **Node.js**, and **Fuse.js** for the fuzzy search magic.
