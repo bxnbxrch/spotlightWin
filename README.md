@@ -24,20 +24,18 @@ It’s built with **Electron**, **Node.js**, and **Fuse.js** for the fuzzy searc
    git clone <your-repo-url>
    cd WinSpotlight
    ```
-Install dependencies
-
-```bash
-npm install
-```
-Run it
-
-```bash
-npm run start
-```
-Build it (optional)
-```
-npm run build
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Run it**
+   ```bash
+   npm run start
+   ```
+4. **Build it (optional)**
+   ```
+   npm run build
+   ```
 
 
 Add this to startup for best experience.
