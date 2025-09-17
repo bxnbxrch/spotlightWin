@@ -1,17 +1,27 @@
 {
   "name": "spotlightwin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Spotlight-style launcher for Windows built with Electron",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "dist": "electron-builder",
+    "build": "electron-builder --win",
+    "pack": "electron-builder --dir"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bxnbxrch/spotlightWin.git"
   },
-  "keywords": [],
+  "keywords": [
+    "spotlight",
+    "search",
+    "launcher",
+    "windows",
+    "electron",
+    "productivity"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,7 +29,42 @@
   },
   "homepage": "https://github.com/bxnbxrch/spotlightWin#readme",
   "dependencies": {
-    "electron": "^38.1.1",
+    "extract-file-icon": "^0.3.2",
     "fuse.js": "^7.1.0"
+  },
+  "devDependencies": {
+    "electron": "^38.1.1",
+    "electron-builder": "^26.0.12",
+    "windows-shortcuts": "^0.1.6",
+    "extract-file-icon": "^0.3.2"
+  },
+  "build": {
+    "appId": "com.benbi.spotlightWin",
+    "productName": "spotlightWin",
+    "forceCodeSigning": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "renderer.js",
+      "index.html",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": true
+    }
   }
 }
