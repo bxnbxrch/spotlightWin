@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>WinSpotlight</title>
+    <style>
+      body { margin:0; font-family:sans-serif; background:rgba(30,30,30,0.9); color:white; }
+      #search { width:100%; font-size:24px; padding:10px; border:none; outline:none; background:transparent; color:white; }
+      #results { max-height:300px; overflow:auto; }
+      .item { padding:6px 10px; cursor:pointer; }
+      .item:hover { background:rgba(255,255,255,0.1); }
+    </style>
+  </head>
+  <body>
+    <input id="search" placeholder="Type to search..." autofocus />
+    <div id="results"></div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

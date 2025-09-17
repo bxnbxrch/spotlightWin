@@ -1,0 +1,25 @@
+{
+  "name": "spotlightwin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bxnbxrch/spotlightWin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bxnbxrch/spotlightWin/issues"
+  },
+  "homepage": "https://github.com/bxnbxrch/spotlightWin#readme",
+  "dependencies": {
+    "electron": "^38.1.1",
+    "fuse.js": "^7.1.0"
+  }
+}
