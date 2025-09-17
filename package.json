@@ -30,13 +30,14 @@
   "homepage": "https://github.com/bxnbxrch/spotlightWin#readme",
   "dependencies": {
     "extract-file-icon": "^0.3.2",
-    "fuse.js": "^7.1.0"
+    "fuse.js": "^7.1.0",
+    "mathjs": "^14.7.0"
   },
   "devDependencies": {
     "electron": "^38.1.1",
     "electron-builder": "^26.0.12",
-    "windows-shortcuts": "^0.1.6",
-    "extract-file-icon": "^0.3.2"
+    "extract-file-icon": "^0.3.2",
+    "windows-shortcuts": "^0.1.6"
   },
   "build": {
     "appId": "com.benbi.spotlightWin",
