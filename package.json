@@ -1,5 +1,5 @@
 {
-  "name": "spotlightwin",
+  "name": "WindowsSpotlight",
   "version": "1.0.0",
   "description": "Spotlight-style launcher for Windows built with Electron",
   "main": "main.js",
@@ -29,19 +29,22 @@
   },
   "homepage": "https://github.com/bxnbxrch/spotlightWin#readme",
   "dependencies": {
-    "extract-file-icon": "^0.3.2",
-    "fuse.js": "^7.1.0",
-    "mathjs": "^14.7.0"
-  },
-  "devDependencies": {
-    "electron": "^38.1.1",
-    "electron-builder": "^26.0.12",
-    "extract-file-icon": "^0.3.2",
-    "windows-shortcuts": "^0.1.6"
-  },
+  "extract-file-icon": "^0.3.2",
+  "fuse.js": "^7.1.0",
+  "mathjs": "^14.7.0"
+},
+"devDependencies": {
+  "electron": "^38.1.1",
+  "electron-builder": "^26.0.12",
+  "windows-shortcuts": "^0.1.6"
+},
   "build": {
-    "appId": "com.benbi.spotlightWin",
-    "productName": "spotlightWin",
+    "appId": "com.benbi.WindowsSpotlight",
+    "productName": "WindowsSpotlight",
+  "asarUnpack": [
+    "node_modules/extract-file-icon/**"
+  ],
+
     "forceCodeSigning": false,
     "directories": {
       "output": "dist"
@@ -49,6 +52,9 @@
     "files": [
       "main.js",
       "renderer.js",
+      "ipcHandlers.js",
+      "windowManager.js",
+      "indexer.js",
       "index.html",
       "package.json",
       "node_modules/**/*"
