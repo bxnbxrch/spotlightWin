@@ -147,18 +147,20 @@ class SpotlightRenderer {
       });
     }
 
-    this.filteredItems = results
+      this.filteredItems = results
         .sort((a, b) => {
-          // Custom category order: Applications, Folders, Files, Web Search, Other
+          // Web Search always at the bottom
+          if (a.category === 'Web Search' && b.category !== 'Web Search') return 1;
+          if (b.category === 'Web Search' && a.category !== 'Web Search') return -1;
+          // Group by category order
           const categoryOrder = {
             'Applications': 1,
             'Folders': 2,
             'Files': 3,
-            'Web Search': 4
+            'Web Search': 99 // Always last
           };
-          // Group by category order
-          const aCat = categoryOrder[a.category] || 99;
-          const bCat = categoryOrder[b.category] || 99;
+          const aCat = categoryOrder[a.category] || 98;
+          const bCat = categoryOrder[b.category] || 98;
           if (aCat !== bCat) return aCat - bCat;
           // Start Menu 'Programs' apps to top within Applications
           if (a.category === 'Applications' && b.category === 'Applications') {
@@ -172,7 +174,7 @@ class SpotlightRenderer {
           if (!aHasIcon && bHasIcon) return 1;
           return b.score - a.score;
         })
-      .slice(0, 15);
+        .slice(0, 15);
 
     this.selectedIndex = 0;
     this.renderResults();
