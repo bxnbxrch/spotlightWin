@@ -24,8 +24,8 @@ It’s built with **Electron**, **Node.js**, and **Fuse.js** for the fuzzy searc
 
 1. **Clone it**
    ```bash
-   git clone <your-repo-url>
-   cd WinSpotlight
+   git clone https://github.com/bxnbxrch/windows-spotlight-search
+   cd windows-spotlight-search
    ```
 2. **Install dependencies**
    ```bash
